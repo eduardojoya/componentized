@@ -1,5 +1,11 @@
 import React, { Component } from "react";
 import "./App.css";
+
+// import ComponentOne from './components/One/Pig.js';
+// import ComponentTwo from './components/Two/Inventory.js';
+
+// Refer to 4.1 Activity 3 Farm Game
+
 class App extends Component {
   state = {
     currency: "EUR",
@@ -21,6 +27,7 @@ class App extends Component {
       });
   }
 
+  // Should this onChange be here or should it be in a Component cause it's a setState?
   onCurrencyChange = ev => {
     let value = ev.target.value;
     this.setState({
@@ -128,21 +135,19 @@ class App extends Component {
             </label>{" "}
           </div>{" "}
         </section>{" "}
-        <section className="MainContainer">
-          <div class="BarChart">
-            {" "}
-            {Object.keys(this.state.data.rates).map(datum => (
-              <div
-                className="BarChart-bar"
-                style={{
-                  height: 100 / this.state.data.rates[datum] + "%"
-                }}
-              >
-                {datum} {this.state.data.rates[datum]}{" "}
-              </div>
-            ))}{" "}
-          </div>{" "}
-        </section>{" "}
+        <div class="BarChart">
+          {" "}
+          {Object.keys(this.state.data.rates).map(datum => (
+            <div
+              className="BarChart-bar"
+              style={{
+                height: 100 / this.state.data.rates[datum] + "%"
+              }}
+            >
+              {datum} {this.state.data.rates[datum].toFixed(2)}{" "}
+            </div>
+          ))}{" "}
+        </div>{" "}
       </div>
     );
   }

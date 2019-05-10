@@ -7,23 +7,23 @@ body {
 
 
 :root {
-  --odd: #eec1ea;
-  --even: #a374d5;
-  --hover: #c1eaee;
-  --title: #ffc15e;
-  --background: #fffbbe;
+  --odd: #6ef3d6;
+  --even: #0dceda;
+  --hover: #fffa67;
+  --title: #c6fce5;
+  --background: #ebfffa;
   --main-margins: 10vw;
   --top-bar-height: 100px;
   --content-height: calc(100vh - var(--top-bar-height));
 }
 
-.MainContainer {
+/* .MainContainer {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   color: var(--text);
   padding-left: var(--main-margins);
   padding-right: var(--main-margins);
-}
+} */
 
 
 .TitleBar {
@@ -49,11 +49,11 @@ body {
   letter-spacing: 1px;
 }
 
-.MainContainer {
+/* .MainContainer {
   grid-template-rows: 150px auto;
   display: grid;
   min-height: var(--content-height);
-}
+} */
 
 :-webkit-any(article, aside, nav, section) h1 {
   margin-block-start: 0.83em;
@@ -190,7 +190,7 @@ select {
   border-image: initial;
 }
 
-,
+
 select {
   text-rendering: auto;
   color: initial;
@@ -205,7 +205,7 @@ select {
   font: 400 13.3333px Arial;
 }
 
-,
+
 select {
   -webkit-writing-mode: horizontal-tb !important;
 }
