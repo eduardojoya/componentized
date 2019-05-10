@@ -1,11 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import BarChart from "./components/BarChart/BarChart.js";
-
-// import ComponentOne from './components/One/Pig.js';
-// import ComponentTwo from './components/Two/Inventory.js';
-
-// Refer to 4.1 Activity 3 Farm Game
+import CurrencyChooser from "./components/CurrencyChooser/CurrencyChooser.js";
 
 class App extends Component {
   state = {
@@ -28,7 +24,6 @@ class App extends Component {
       });
   }
 
-  // Should this onChange be here or should it be in a Component cause it's a setState?
   onCurrencyChange = ev => {
     let value = ev.target.value;
     this.setState({
@@ -50,92 +45,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <section className="TitleBar">
-          <h1> Currency </h1>
-          <div className="CurrencyChooser">
-            <label>
-              <select className="CurrencyChooser-select" value="EUR">
-                <option value="EUR"> EUR </option>{" "}
-                <option value="AUD"> AUD </option>{" "}
-                <option value="BGN"> BGN </option>{" "}
-                <option value="BRL"> BRL </option>{" "}
-                <option value="CAD"> CAD </option>{" "}
-                <option value="CHF"> CHF </option>{" "}
-                <option value="CNY"> CNY </option>{" "}
-                <option value="CZK"> CZK </option>{" "}
-                <option value="DKK"> DKK </option>{" "}
-                <option value="GBP"> GBP </option>{" "}
-                <option value="HKD"> HKD </option>{" "}
-                <option value="HRK"> HRK </option>{" "}
-                <option value="HUF"> HUF </option>{" "}
-                <option value="IDR"> IDR </option>{" "}
-                <option value="ILS"> ILS </option>{" "}
-                <option value="INR"> INR </option>{" "}
-                <option value="ISK"> ISK </option>{" "}
-                <option value="JPY"> JPY </option>{" "}
-                <option value="KRW"> KRW </option>{" "}
-                <option value="MXN"> MXN </option>{" "}
-                <option value="MYR"> MYR </option>{" "}
-                <option value="NOK"> NOK </option>{" "}
-                <option value="NZD"> NZD </option>{" "}
-                <option value="PHP"> PHP </option>{" "}
-                <option value="PLN"> PLN </option>{" "}
-                <option value="RON"> RON </option>{" "}
-                <option value="RUB"> RUB </option>{" "}
-                <option value="SEK"> SEK </option>{" "}
-                <option value="SGD"> SGD </option>{" "}
-                <option value="THB"> THB </option>{" "}
-                <option value="TRY"> TRY </option>{" "}
-                <option value="USD"> USD </option>{" "}
-                <option value="ZAR"> ZAR </option>{" "}
-              </select>
-              →{" "}
-            </label>{" "}
-          </div>{" "}
-          <div className="MultipleCurrencies">
-            <label>
-              <select
-                value={this.state.currency}
-                onChange={this.onCurrencyChange}
-                className="CurrencyChooser-select"
-              >
-                <option value="EUR"> EUR </option>{" "}
-                <option value="AUD"> AUD </option>{" "}
-                <option value="BGN"> BGN </option>{" "}
-                <option value="BRL"> BRL </option>{" "}
-                <option value="CAD"> CAD </option>{" "}
-                <option value="CHF"> CHF </option>{" "}
-                <option value="CNY"> CNY </option>{" "}
-                <option value="CZK"> CZK </option>{" "}
-                <option value="DKK"> DKK </option>{" "}
-                <option value="GBP"> GBP </option>{" "}
-                <option value="HKD"> HKD </option>{" "}
-                <option value="HRK"> HRK </option>{" "}
-                <option value="HUF"> HUF </option>{" "}
-                <option value="IDR"> IDR </option>{" "}
-                <option value="ILS"> ILS </option>{" "}
-                <option value="INR"> INR </option>{" "}
-                <option value="ISK"> ISK </option>{" "}
-                <option value="JPY"> JPY </option>{" "}
-                <option value="KRW"> KRW </option>{" "}
-                <option value="MXN"> MXN </option>{" "}
-                <option value="MYR"> MYR </option>{" "}
-                <option value="NOK"> NOK </option>{" "}
-                <option value="NZD"> NZD </option>{" "}
-                <option value="PHP"> PHP </option>{" "}
-                <option value="PLN"> PLN </option>{" "}
-                <option value="RON"> RON </option>{" "}
-                <option value="RUB"> RUB </option>{" "}
-                <option value="SEK"> SEK </option>{" "}
-                <option value="SGD"> SGD </option>{" "}
-                <option value="THB"> THB </option>{" "}
-                <option value="TRY"> TRY </option>{" "}
-                <option value="USD"> USD </option>{" "}
-                <option value="ZAR"> ZAR </option>{" "}
-              </select>{" "}
-            </label>{" "}
-          </div>{" "}
-        </section>{" "}
+        <CurrencyChooser
+          currency={this.state.currency}
+          onCurrencyChange={this.onCurrencyChange}
+        />
         <BarChart data={this.state.data} />
       </div>
     );
