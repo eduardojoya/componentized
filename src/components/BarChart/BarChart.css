@@ -1,0 +1,48 @@
+.BarChart {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 500px;
+    grid-gap: 20px;
+    align-items: end;
+    margin-top: 100px;
+    margin-left: 150px;
+    margin-right: 150px;
+    transition: transform 0.5s, filter 0.5s;
+    transform: perspective(000px) translate3d(0px, 1px, 0px);
+    text-align: center;
+}
+
+
+.BarChart-bar {
+    font-size: 2.8vw;
+    height: 50px;
+    -webkit-transition: -webkit-transform .5s, -webkit-filter .5s;
+    transition: -webkit-transform .5s, -webkit-filter .5s;
+    -o-transition: transform .5s, filter .5s;
+    transition: transform .5s, filter .5s;
+    transition: transform .5s, filter .5s, -webkit-transform .5s, -webkit-filter .5s;
+    -webkit-transform: perspective(1000px) translate3d(0, 1px, 0);
+    transform: perspective(1000px) translate3d(0, 1px, 0);
+    text-align: center;
+}
+
+.BarChart-bar:nth-child(2n) {
+    background-color: var(--even);
+}
+
+.BarChart-bar:nth-child(odd) {
+    background-color: var(--odd);
+}
+
+
+.BarChart-bar:hover {
+    background-color: var(--hover);
+    transition: transform 2s, filter 2s;
+    filter: brightness(1);
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 15;
+    cursor: pointer;
+    transform: perspective(1000px) translate3d(0px, 0px, 100px);
+}

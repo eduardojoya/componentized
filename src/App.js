@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import BarChart from "./components/BarChart/BarChart.js";
 
 // import ComponentOne from './components/One/Pig.js';
 // import ComponentTwo from './components/Two/Inventory.js';
@@ -135,19 +136,7 @@ class App extends Component {
             </label>{" "}
           </div>{" "}
         </section>{" "}
-        <div class="BarChart">
-          {" "}
-          {Object.keys(this.state.data.rates).map(datum => (
-            <div
-              className="BarChart-bar"
-              style={{
-                height: 100 / this.state.data.rates[datum] + "%"
-              }}
-            >
-              {datum} {this.state.data.rates[datum].toFixed(2)}{" "}
-            </div>
-          ))}{" "}
-        </div>{" "}
+        <BarChart data={this.state.data} />
       </div>
     );
   }
