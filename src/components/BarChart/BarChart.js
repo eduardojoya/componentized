@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./BarChart.css";
+import Bar from "./Bar/Bar.js";
 
 class BarChart extends Component {
   render() {
@@ -7,14 +8,7 @@ class BarChart extends Component {
       <div className="BarChart">
         {" "}
         {Object.keys(this.props.data.rates).map(datum => (
-          <div
-            className="BarChart-bar"
-            style={{
-              height: 100 / this.props.data.rates[datum] + "%"
-            }}
-          >
-            {datum} {this.props.data.rates[datum].toFixed(2)}{" "}
-          </div>
+          <Bar title={datum} value={this.props.data.rates[datum]} />
         ))}{" "}
       </div>
     );

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
-import BarChart from "./components/BarChart/BarChart.js";
 import CurrencyChooser from "./components/CurrencyChooser/CurrencyChooser.js";
+import BarChart from "./components/BarChart/BarChart.js";
+import Bar from "./components/BarChart/Bar/Bar.js";
 
 class App extends Component {
   state = {
